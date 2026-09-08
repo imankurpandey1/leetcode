@@ -1,14 +1,4 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        return str(x)==str(x)[::-1]
         
-         temp=x
-         rev=0
-         if temp<0:
-            return False
-         while temp>0:
-            r=temp%10
-            rev=rev*10+r
-            temp=temp//10
-         return rev==x
-
-           
