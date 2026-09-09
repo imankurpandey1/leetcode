@@ -1,11 +1,16 @@
-from functools import cache
 class Solution:
-    @cache
     def tribonacci(self, n: int) -> int:
-       
         if n==0:
             return 0
-        elif n==1 or n==2:
+        if n==1 or n==2:
             return 1
-        else:
-            return self.tribonacci(n-1)+self.tribonacci(n-2)+self.tribonacci(n-3)
+        prev3=0
+        prev2=1
+        prev1=1
+        for i in range(3,n+1):
+            current=prev3+prev2+prev1
+            prev3=prev2
+            prev2=prev1
+            prev1=current
+        return prev1
+        
