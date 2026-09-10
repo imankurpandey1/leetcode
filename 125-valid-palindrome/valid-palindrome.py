@@ -3,11 +3,12 @@ class Solution:
         x=ord(s)
         if 97<=x<=122 or 65<=x<=90 or 48<=x<=57:
             return True
-        return False 
+        return False
     def isPalindrome(self, s: str) -> bool:
         s=s.lower()
         i=0
         j=len(s)-1
+        
         while i<j:
             if not self.isalphanum(s[i]):
                 i+=1
@@ -19,3 +20,4 @@ class Solution:
             else:
                 return False
         return True
+        
