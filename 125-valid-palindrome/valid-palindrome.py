@@ -1,23 +1,32 @@
 class Solution:
     def isalphanum(self,s):
-        x=ord(s)
-        if 97<=x<=122 or 65<=x<=90 or 48<=x<=57:
+        s=s.lower()
+        st=ord(s)
+        if 97<=st<=122 or 65<=st<=90 or 48<=st<=57:
             return True
+
         return False
     def isPalindrome(self, s: str) -> bool:
+        left=0
         s=s.lower()
-        i=0
-        j=len(s)-1
-        
-        while i<j:
-            if not self.isalphanum(s[i]):
-                i+=1
-            elif not self.isalphanum(s[j]):
-                j-=1
-            elif s[i]==s[j]:
-                i+=1
-                j-=1
+        right=len(s)-1
+        while left<right:
+            
+            if not self.isalphanum(s[left]):
+                left+=1
+                
+            elif not self.isalphanum(s[right]):
+                right-=1
+            elif s[left]!=s[right]:
+                return False
+                
+            
+            elif s[left]==s[right]:
+                left+=1
+                right-=1
             else:
                 return False
+                
         return True
-        
+
+
