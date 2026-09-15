@@ -4,7 +4,6 @@ class Solution:
         freq2={}
         if len(s)!=len(t):
             return False
-
         for i in s:
             if i not in freq1:
                 freq1[i]=1
@@ -15,8 +14,6 @@ class Solution:
                 freq2[j]=1
             else:
                 freq2[j]+=1
-        
         if freq1==freq2:
             return True
-        else:
-            return False
+        return False
