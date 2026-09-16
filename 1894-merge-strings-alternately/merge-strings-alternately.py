@@ -6,6 +6,10 @@ class Solution:
             merged.append(word1[i])
             merged.append(word2[i])
             i+=1
-        merged.append(word1[i:])
-        merged.append(word2[i:])
+        while i < len(word1):
+            merged.append(word1[i])
+            i += 1
+        while i < len(word2):
+            merged.append(word2[i])
+            i += 1
         return "".join(merged)
