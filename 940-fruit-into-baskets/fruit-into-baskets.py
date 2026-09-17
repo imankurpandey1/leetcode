@@ -4,6 +4,7 @@ class Solution:
         basket={}
         for right in range(len(fruits)):
             fruit=fruits[right]
+            
             if fruit in basket:
                 basket[fruit]+=1
             else:
@@ -14,5 +15,6 @@ class Solution:
 
                 if basket[left_fruit]==0:
                     del basket[left_fruit]
+
                 left+=1
         return len(fruits)-left
